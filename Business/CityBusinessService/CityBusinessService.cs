@@ -2,11 +2,6 @@
 using Context;
 using Entity.City;
 using Entity.CityService;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ViewModel;
 
 namespace Business.CityBusinessService
@@ -23,22 +18,26 @@ namespace Business.CityBusinessService
 
         public Result<City> Create(CityVM model)
         {
+
             using var transaction = _dbContext.Database.BeginTransaction();
             try
             {
-                City zone = new City
+                City city = new City
                 {
                     CityName = model.CityName,
                     CountryName = model.CountryName,
 
 
                 };
-                var city = _cityRepositoryService.GetFirst(u => u.CityName == zone.CityName && u.CountryName == zone.CountryName);
-                if (city.IsSuccess)
+                var getFirst = _cityRepositoryService.GetFirst(u => u.CityName == city.CityName && u.CountryName == city.CountryName && u.DeletedAt== null && u.DeletedAt != null);
+                if (getFirst.IsSuccess)
                 {
-                    return new Result<City>(city.MessageType ?? MessageType.RecordAlreadyExists);
+                    return new Result<City>(getFirst.MessageType ?? MessageType.RecordAlreadyExists);
                 }
-                var addCity = _cityRepositoryService.Add(zone);
+                var deleteAtNull = _cityRepositoryService.Get(whereCondition: u => u.DeletedAt != null);
+                
+                
+                var addCity = _cityRepositoryService.Add(city);
                 transaction.Commit();
                 return addCity;
             }
@@ -61,9 +60,9 @@ namespace Business.CityBusinessService
                 edit.Data.CityName = ModelDTO.CityName;
                 edit.Data.CountryName = ModelDTO.CountryName;
 
-                var editZone = _cityRepositoryService.Update(edit.Data);
+                var editCity = _cityRepositoryService.Update(edit.Data);
                 transaction.Commit();
-                return editZone;
+                return editCity;
 
 
             }
