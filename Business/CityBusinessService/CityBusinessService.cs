@@ -28,15 +28,7 @@ namespace Business.CityBusinessService
                     CountryName = model.CountryName,
 
 
-                };
-                var getFirst = _cityRepositoryService.GetFirst(u => u.CityName == city.CityName && u.CountryName == city.CountryName && u.DeletedAt== null && u.DeletedAt != null);
-                if (getFirst.IsSuccess)
-                {
-                    return new Result<City>(getFirst.MessageType ?? MessageType.RecordAlreadyExists);
-                }
-                var deleteAtNull = _cityRepositoryService.Get(whereCondition: u => u.DeletedAt != null);
-                
-                
+                }; 
                 var addCity = _cityRepositoryService.Add(city);
                 transaction.Commit();
                 return addCity;
