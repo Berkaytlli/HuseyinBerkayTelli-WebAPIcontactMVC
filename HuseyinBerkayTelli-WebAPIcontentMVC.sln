@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{306BD7C1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation-WebAPI", "Presentation-WebAPI", "{97D5F482-E99A-4E90-9C8C-256B5DBF70FB}"
 	ProjectSection(SolutionItems) = preProject
-		HuseyinBerkayTellı-MVC\ReadMe.txt = HuseyinBerkayTellı-MVC\ReadMe.txt
+		ReadMe.txt = ReadMe.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppEnvironment", "AppEnvironment\AppEnvironment.csproj", "{94FCCEFA-11AB-4A05-A40D-FDEFFA55DED2}"
@@ -29,9 +29,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HuseyinBerkayTellı-MVC", "HuseyinBerkayTellı-MVC\HuseyinBerkayTellı-MVC.csproj", "{99B722A4-A824-4466-B161-F94219EC4A51}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation-MVC", "Presentation-MVC", "{D6B5F36F-211C-4BC7-854A-1A352268DD0B}"
-	ProjectSection(SolutionItems) = preProject
-		HuseyinBerkayTellı-MVC\ReadMe.txt = HuseyinBerkayTellı-MVC\ReadMe.txt
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

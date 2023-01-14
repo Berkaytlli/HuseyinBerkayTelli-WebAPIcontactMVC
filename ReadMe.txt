@@ -1,0 +1,1 @@
+AppSetting.json daki ConnectionString ayarlamasýný yapýnýz.

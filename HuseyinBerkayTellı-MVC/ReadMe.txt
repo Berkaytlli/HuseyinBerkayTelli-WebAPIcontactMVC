@@ -1,1 +1,0 @@
-﻿Lütfen WebAPI ve MVC kısımlarındaki appsettings.jsona girerek ConnectionStrings'inizi kendi MySQL Database'inize göre ayarlayın.
